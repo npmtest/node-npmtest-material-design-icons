@@ -1,1 +1,40 @@
-{     "devDependencies": {         "material-design-icons": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-material-design-icons",     "homepage": "https://github.com/npmtest/node-npmtest-material-design-icons",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-material-design-icons.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [material-design-icons (v3.0.1)](https://github.com/google/material-design-icons)  [![npm package](https://img.shields.io/npm/v/npmtest-material-design-icons.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-material-design-icons) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-material-design-icons.svg)](https://travis-ci.org/npmtest/node-npmtest-material-design-icons)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "material-design-icons": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-material-design-icons",
+    "keywords": [
+        "coverage",
+        "test",
+        "material-design-icons"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_material_design_icons.js",
+    "name": "npmtest-material-design-icons",
+    "nameAlias": "npmtest_material_design_icons",
+    "nameOriginal": "npmtest-material-design-icons",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-material-design-icons.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
